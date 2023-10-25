@@ -1,21 +1,22 @@
 void main(){
-  Mobile m1 = Mobile();
+  Mobile m1 = Mobile(givenModel: "C12");
   m1.mob();
-  m1.mobe();
+
+  Mobile m2 = Mobile(givenModel: "C15");
+  m2.mob();
+
 }
 
 class Mobile{
   String company = "Realmi";
-  String model = "C12";
+  late String model;
 
-  String com = "I-Phone";
-  String mod = "15 pro MAX";
+  Mobile({required String givenModel}){
+    model = givenModel;
+  }
 
   void mob(){
-    print("This is my new phone. This name is $company and model: $model");
+    print("This name is $company and model: $model");
   }
 
-  void mobe(){
-    print("This is Rare. This name is $com and model: $mod");
-  }
 }
