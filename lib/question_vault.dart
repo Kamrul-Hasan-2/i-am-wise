@@ -1,7 +1,10 @@
+// ignore_for_file: unused_field
+
 import 'question.dart';
 
 class QustionValt{
-    List<Question> qustionSet = [
+    int _questionNum = 0;
+    final List<Question> _qustionSet = [
       Question(
           qus: 'Flutter can only develop mobile applications',
           img: "images/flutter.png",
@@ -15,6 +18,24 @@ class QustionValt{
           img: "images/sea-beach.jpeg",
           ans: true),
     ];
+
+    void nextQuestion(){
+      if(_questionNum < _qustionSet.length-1){
+        _questionNum++;
+      }
+
+    }
+    String getQuestionTittle(){
+      return _qustionSet[_questionNum].questionTitle;
+    }
+    String getImage(){
+      return _qustionSet[_questionNum].images;
+    }
+    bool getAnswer(){
+      return _qustionSet[_questionNum].answer;
+    }
+
 }
+
 
 
